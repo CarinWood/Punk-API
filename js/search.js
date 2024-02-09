@@ -1,10 +1,14 @@
 let inputField = document.querySelector(".input-field");
+let currentPage = 0;
+let currentBeerName;
 
-async function searchBeer(beerName) {
+async function searchBeer(beerName, page) {
+  currentPage = page;
+  currentBeerName = beerName;
   document.querySelector(".search-results").innerHTML = "";
   try {
     const res = await fetch(
-      `https://api.punkapi.com/v2/beers?beer_name=${beerName}&page=1&per_page=10`
+      `https://api.punkapi.com/v2/beers?beer_name=${beerName}&page=${page}&per_page=10`
     );
     const data = await res.json();
     data.forEach((beer) => {
@@ -22,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    searchBeer(inputField.value);
+    searchBeer(inputField.value, 1);
   });
+});
+
+document.querySelector("#right").addEventListener("click", () => {
+  currentPage++;
+  searchBeer(currentBeerName, currentPage);
+});
+
+document.querySelector("#left").addEventListener("click", () => {
+  if (currentPage === 1) {
+    return;
+  } else {
+    currentPage--;
+    searchBeer(currentBeerName, currentPage);
+  }
 });

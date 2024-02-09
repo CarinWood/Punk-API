@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <title>Search beer</title>
   </head>
   <body>
     <!-- Search form -->
     <form id="searchForm" action="">
-      <input 
-        type="text" 
-        placeholder="beer_name" 
-        class="input-field" 
-      />
+      <input type="text" placeholder="beer_name" class="input-field" />
       <button class="search">Search</button>
     </form>
-    <section class="search-results"></section>
+    <div class="result-frame">
+      <section class="search-results"></section>
+      <div class="pagination">
+        <i class="material-icons" id="left">play_arrow</i>
+        <i class="material-icons" id="right">play_arrow</i>
+      </div>
+    </div>
     <script src="/js/search.js"></script>
   </body>
 </html>
