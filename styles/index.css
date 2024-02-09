@@ -108,7 +108,7 @@ body {
     opacity: 0.6;
 }
 
-.beer-btn {
+.beer-btn, .search-beer-btn {
     width: 200px;
     height: 50px;
     background-color: #ffd871;
@@ -122,9 +122,12 @@ body {
     left: 40%;
     bottom: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
-.beer-btn:active {
+.search-beer-btn {
+    left: 20%;
+}
+
+.beer-btn:active, .search-beer-btn:active {
     transform: translateY(3px)
 }
