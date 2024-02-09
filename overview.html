@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/overview.css">
+    <link rel="stylesheet" href="/styles/overview.css" />
     <title>Overview</title>
   </head>
   <body>
-    <h1>Hello!!!!</h1>
+    <h1 class="beer-name"></h1>
+    <p class="description"></p>
+    <div class="middle-part">
+      <article class="img-holder">
+        <img class="showpic" src="" alt="beer bottle" />
+      </article>
+      <article class="frame">
+        <p class="abv"></p>
+        <p class="volume"></p>
+        <h4>Ingredients:</h4>
+        <ul class="ingredients"></ul>
+        <h4>Kind of hops:</h4>
+        <ul class="hops"></ul>
+      </article>
+    </div>
+    <div class="bottom-part">
+      <section>
+        <h4>Food recommendations:</h4>
+        <article class="food"></article>
+      </section>
+      <section>
+        <h4>Brewers tips:</h4>
+        <article class="tips"></article>
+      </section>
+    </div>
     <script src="/js/overview.js"></script>
   </body>
 </html>
