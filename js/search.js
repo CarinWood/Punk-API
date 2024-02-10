@@ -15,6 +15,10 @@ async function searchBeer(beerName, page) {
       let beerResult = document.createElement("p");
       beerResult.innerText = beer.name;
       document.querySelector(".search-results").appendChild(beerResult);
+      beerResult.addEventListener("click", () => {
+        localStorage.setItem("beerId", beer.id.toString());
+        window.location.href = "overview.html";
+      });
     });
   } catch (error) {
     console.error("Error", error);
